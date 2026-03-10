@@ -5,11 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:social-app": "node dist/social-app/server/server.mjs",
-    "vercel-build": "npm install --legacy-peer-deps && npm run build:ssr"
   },
   "prettier": {
     "printWidth": 100,
