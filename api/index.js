@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    const serverModule = await import('../dist/angular-ssr/server/server.mjs');
+    const serverModule = await import('../dist/social-app/server/server.mjs');
     
     // Angular's new builder exports the server differently
     const server = serverModule.default || serverModule.app || serverModule;
