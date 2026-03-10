@@ -1,29 +1,19 @@
-
-const server = require('../dist/social-app/server/main.js');
-
-module.exports = async (req, res) => {
-    console.log('🔵 Request received:', req.url);
-
-    try {
-
-        const app = server.app ? server.app() : server;
-        return app(req, res);
-    } catch (error) {
-        console.error('🔴 SSR Error:', error);
-
-        // Fallback: serve the client-side app if SSR fails
-        res.status(500).send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>Loading...</title>
-          <base href="/">
-        </head>
-        <body>
-          <app-root></app-root>
-          <script src="/main.js"></script>
-        </body>
-      </html>
-    `);
+export default async function handler(req, res) {
+  try {
+    const serverModule = await import('../dist/angular-ssr/server/server.mjs');
+    
+    // Angular's new builder exports the server differently
+    const server = serverModule.default || serverModule.app || serverModule;
+    
+    if (typeof server === 'function') {
+      return server(req, res);
+    } else if (server && typeof server.handle === 'function') {
+      return server.handle(req, res);
+    } else {
+      throw new Error('Server module does not export a valid handler');
     }
-};
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).send('Internal Server Error: ' + error.message);
+  }
+}

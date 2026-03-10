@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/social-app-sat/**",
-      "maxDuration": 10
-    }
-  },
-  "routes": [
+  "public": true,
+  "name": "social-app",
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
+      "source": "/(.*)",
+      "destination": "/api/index"
     }
   ],
-  "cleanUrls": true
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/social-app/**"
+    }
+  }
 }
