@@ -1,0 +1,51 @@
+{
+  "COMMON": {
+    "SAVE": "حفظ",
+    "LOGIN": "تسجيل الدخول",
+    "REGISTER": "إنشاء حساب",
+    "CREATE_ACCOUNT": "إنشاء حساب جديد",
+    "ALREADY_HAVE_ACCOUNT": "لديك حساب بالفعل" ,
+    "AR" : "عربي" ,
+    "EN" : "انجليزي"
+  },
+
+  "ALERT_VALIDATION": {
+    "REQUIRED": "هذا الحقل مطلوب",
+    "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+    "EMAIL_INVALID": "البريد الإلكتروني غير صالح",
+    "PASSWORD_REQUIRED": "كلمة المرور مطلوبة",
+    "USERNAME_REQUIRED": "اسم المستخدم مطلوب",
+    "NAME_REQUIRED": "الاسم مطلوب",
+    "USERNAME_PATTERN": "يجب أن يحتوي اسم المستخدم على حروف صغيرة أو أرقام أو _ فقط (3-30)",
+    "NAME_MIN_LENGTH": "يجب ألا يقل الاسم عن 5 أحرف",
+    "GENDER_REQUIRED": "النوع مطلوب",
+    "BIRTHDATE_REQUIRED": "تاريخ الميلاد مطلوب",
+    "REPASSWORD_REQUIRED": "تأكيد كلمة المرور مطلوب",
+    "PASSWORD_MISMATCH": "كلمتا المرور غير متطابقتين",
+    "PASSWORD_PATTERN": "يجب أن تحتوي كلمة المرور على حرف كبير وصغير ورقم ورمز خاص وعلى الأقل 8 أحرف"
+  },
+
+  "FORMS": {
+    "LABELS": {
+      "FULL_NAME": "الاسم الكامل",
+      "USERNAME": "اسم المستخدم",
+      "EMAIL": "البريد {{value}} الإلكتروني",
+      "PASSWORD": "كلمة المرور",
+      "REPASSWORD": "تأكيد كلمة المرور",
+      "GENDER": "النوع",
+      "BIRTHDATE": "تاريخ الميلاد"
+    },
+    "OPTIONS": {
+      "MALE": "ذكر",
+      "FEMALE": "أنثى"
+    }
+  },
+
+  "LOGIN_PAGE": {
+    "LOGIN_TITLE": "اهلا ، <br /> قم بتسجيل الدخول !"
+  },
+
+  "REGISTER_PAGE": {
+    "REGISTER_TITLE": "نموذج التسجيل"
+  }
+}

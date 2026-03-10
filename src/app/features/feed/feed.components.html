@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-blue-100">
+    <!--  -->
+    <div class="container p-2 flex flex-wrap lg:flex-nowrap  gap-5  mx-auto py-5">
+
+        <!-- for mobile view  -->
+         <div class="block py-2 lg:hidden w-full bg-sky-500" ></div>
+         <div class="block py-2 lg:hidden w-full bg-orange-500"></div>
+
+
+
+         <!-- for desktop view -->
+        <div class="hidden lg:block bg-sky-500 py-4  w-1/4"></div>
+        <div class=" py-4  w-1/2 grow">
+            <!--  -->
+            <app-create-post></app-create-post>
+            <!--  -->
+           
+            <div class="grid gap-4 mt-5">
+                <!-- loading -->
+                @for( post of posts; track $index ) {
+                   
+                    <app-post-card [post]="post"></app-post-card>
+    
+                }
+                @empty { 
+
+                }
+            </div>
+        </div>
+        <div class="hidden lg:block bg-orange-500 py-4  w-1/4"></div>
+    </div>
+
+</div>

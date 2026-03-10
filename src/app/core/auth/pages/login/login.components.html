@@ -1,0 +1,81 @@
+<div class="min-h-screen flex items-center justify- bg-gray-400">
+    <div class="min-w-1/2 bg-white max-w-7xl mx-auto p-4 rounded">
+        <h2 class="text-2xl font-bold mb-7"    [innerHTML]="'LOGIN_PAGE.LOGIN_TITLE' | translate"      > </h2>
+
+        @if(errorMsg){
+            <p class="text-red-500 mb-7">
+                <!-- !!!! -->
+                {{errorMsg}}
+            </p>
+        }
+
+
+        <form (ngSubmit)="login()" [formGroup]="loginForm" action="">
+            <!-- {
+                email : 
+                password :
+            } -->
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input formControlName="email" type="email" name="email" id="email"
+                    class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                    placeholder=" " />
+                <label for="email"
+                    class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">{{"FORMS.LABELS.EMAIL" | translate :{value} }}</label>
+            </div>
+
+            @if ( loginForm.get('email')?.errors && loginForm.get('email')?.touched ) {
+            <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+                <ul>
+                    @if (loginForm.get('email')?.hasError('required')) {
+                    <li>{{"ALERT_VALIDATION.EMAIL_REQUIRED" | translate}}</li>
+
+                    }
+                    @if (loginForm.get('email')?.hasError('email')) {
+
+                    <li>{{"ALERT_VALIDATION.EMAIL_INVALID" | translate}}</li>
+                    }
+                </ul>
+            </div>
+            }
+
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input formControlName="password" type="password" name="password" id="password"
+                    class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+                    placeholder=" " />
+                <label for="password"
+                    class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">{{'FORMS.LABELS.PASSWORD' | translate}}</label>
+            </div>
+
+
+
+
+            @if ( loginForm.get('password')?.errors && loginForm.get('password')?.touched ) {
+            <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+                <ul>
+                    @if (loginForm.get('password')?.hasError('required')) {
+                    <li>{{"FORMS.LABELS.PASSWORD" | translate}}</li>
+
+                    }
+                   
+                </ul>
+            </div>
+            }
+
+            <!-- loginForm.invalid -->
+            <button [disabled]=" loginForm.invalid || loading" class="main-btn">
+                {{"COMMON.LOGIN" |translate}}
+                @if(loading) {
+                    <i class="fa fa-spinner fa-spin"></i>
+                }
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<div class="fixed top-20 end-20  bg-sky-200 text-white flex gap-3 rounded p-2 ">
+    <button (click)="swicthLang('ar')" class="secondary-btn">{{"COMMON.AR" | translate}}</button>
+    <button (click)="swicthLang('en')" class="secondary-btn">{{"COMMON.EN" | translate}}</button>
+</div>

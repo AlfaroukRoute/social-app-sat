@@ -1,0 +1,232 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="max-w-4xl px-4 mx-auto my-8 ">
+    <h2 class="text-4xl mb-4">{{"REGISTER_PAGE.REGISTER_TITLE" | translate}}</h2>
+    @if (errorMsg) {
+    <p class="bg-red-500 text-white py-4 rounded px-2 text-2xl">{{errorMsg}}</p>
+    }
+    <div class="relative z-0 w-full mb-5 group relative">
+        @if (registerForm.get('name')?.errors != null && registerForm.get('name')?.touched) {
+        <i class="fa fa-home text-red-500 absolute end-5 top-1/2 -translate-y-1/2"></i>
+        }
+        @if (registerForm.get('name')?.errors == null && registerForm.get('name')?.touched) {
+        <i class="fa fa-check text-sky-500 absolute end-5 top-1/2 -translate-y-1/2"></i>
+        }
+        <input formControlName="name" type="text" name="fullName" id="fullName"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            [class.!border-red-500]="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched"
+            placeholder=" " />
+        <label for="fullName"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            [class.!text-red-500]="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched">FullName</label>
+    </div>
+
+    @if(registerForm.get('name')?.errors != null && registerForm.get('name')?.touched ){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('name')?.hasError('required'))
+        {
+        <span>{{"ALERT_VALIDATION.NAME_REQUIRED" | translate}}</span>
+
+        }
+
+        @if(registerForm.get('name')?.hasError('minlength'))
+        {
+        <span>should be at least 5 chard</span>
+
+        }
+
+    </div>
+
+    }
+    <!--  -->
+
+    <div class="relative z-0 w-full mb-5 group">
+        @if (registerForm.get('username')?.errors != null && registerForm.get('username')?.touched) {
+        <i class="fa fa-home text-red-500 absolute end-5 top-1/2 -translate-y-1/2"></i>
+        }
+        @if (registerForm.get('username')?.errors == null && registerForm.get('username')?.touched) {
+        <i class="fa fa-check text-sky-500 absolute end-5 top-1/2 -translate-y-1/2"></i>
+        }
+        <input formControlName="username" type="text" name="name" id="name"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" " />
+        <label for="name"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">name</label>
+    </div>
+
+    @if(registerForm.get('username')?.errors != null && registerForm.get('username')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('username')?.hasError('required'))
+        {
+        <span>username is required</span>
+
+        }
+        @if(registerForm.get('username')?.hasError('pattern'))
+        {
+        <span>
+            "username\" with value \"hashim shannon\" fails to match the required pattern: /^[a-z0-9_]3,30
+        </span>
+
+        }
+
+    </div>
+
+    }
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="email" type="email" name="email" id="email"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" " />
+        <label for="email"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">email</label>
+    </div>
+    <!-- {required: true} -->
+    @if(registerForm.get('email')?.errors != null && registerForm.get('email')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('email')?.hasError('required'))
+        {
+        <span>email is required</span>
+
+        }
+
+        @if(registerForm.get('email')?.hasError('email'))
+        {
+        <span>email is not valid</span>
+
+        }
+
+    </div>
+
+    }
+
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <select formControlName="gender" name="gender" id="gender"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" ">
+            <option value="male">Male</option>
+            <option value="female">feMale</option>
+        </select>
+        <label for="gender"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">gender</label>
+    </div>
+
+    @if(registerForm.get('gender')?.errors != null && registerForm.get('gender')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('gender')?.hasError('required'))
+        {
+        <span>gender is required</span>
+
+        }
+
+    </div>
+
+    } 
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="dateOfBirth" type="date" name="birthDate" id="birthDate"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" " />
+        <label for="birthDate"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">birthDate</label>
+
+    </div>
+
+
+    @if(registerForm.get('dateOfBirth')?.errors != null && registerForm.get('dateOfBirth')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('dateOfBirth')?.hasError('required'))
+        {
+        <span>dateOfBirth is required</span>
+
+        }
+
+    </div>
+
+    }
+
+
+    <div class="relative z-0 w-full mb-5 group relative">
+        <i (click)="passwordInput.type == 'text' ? passwordInput.setAttribute('type' , 'password'): passwordInput.setAttribute('type' , 'text')"  [class]="passwordInput.type == 'password' ? 'fa-eye-slash' : 'fa-eye'"  class="fa  text-sky-500 absolute end-5 top-1/2 -translate-y-1/2"></i>
+
+        <input #passwordInput formControlName="password" type="text" name="password" id="password"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" " />
+        <label for="password"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">password</label>
+    </div>
+
+
+    @if(registerForm.get('password')?.errors != null && registerForm.get('password')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+
+        @if(registerForm.get('password')?.hasError('required'))
+        {
+        <span>password is required</span>
+
+        }
+        @if(registerForm.get('password')?.hasError('pattern'))
+        {
+        <span>
+            At least one upper case English letter
+            <br>
+            At least one lower case English letter
+            <br>
+            At least one digit
+            <br>
+            At least one special character or space
+            <br>
+            Minimum eight in length
+        </span>
+
+        }
+
+    </div>
+
+    }
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="rePassword" type="password" name="rePassword" id="rePassword"
+            class="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+            placeholder=" " />
+        <label for="rePassword"
+            class="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-fg-brand peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">rePassword</label>
+    </div>
+
+    <!-- show alerts html -->
+
+    @if(registerForm.get('rePassword')?.errors != null && registerForm.get('rePassword')?.touched){
+    <div class="p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft" role="alert">
+        @if(registerForm.get('rePassword')?.hasError('required'))
+        {
+        <span>rePassword is required</span>
+
+        }
+        @if(registerForm.get('rePassword')?.hasError('mismatch'))
+        {
+        <span>
+            rePassword mismatch password
+        </span>
+
+        }
+
+    </div>
+    }
+
+
+    <!-- registerForm.valid -->
+    <!-- registerForm.invalid -->
+
+    <button [disabled]="isLoading" type="submit"
+        class="disabled:opacity-50 disabled:cursor-not-allowed w-full bg-sky-500 text-white font-bold py-3 rounded active:scale-95 transition-all duration-300">Create
+        New Account
+
+        @if (isLoading) {
+        <i class="fa fa-spinner fa-spin"></i>
+        }
+    </button>
+
+    <a routerLink="/auth/login">Already have account </a>
+</form>

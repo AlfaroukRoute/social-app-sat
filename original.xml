@@ -1,0 +1,97 @@
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol"
+    xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    ID="id-24abc28a-ee7f-4afc-a508-3a7aff1ad0f9" Version="2.0" IssueInstant="2026-02-27T13:23:19Z"
+    Destination="https://iam.cs-ona.nphies.sa/nphies-sso/saml">
+    <saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">
+        https://iam.cs-dev.nphies.sa:443/oam/fed</saml:Issuer>
+    <samlp:Status>
+        <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </samlp:Status>
+    <saml:Assertion ID="pfx29161857-26c6-1028-09e7-a3d5f79d4047" IssueInstant="2026-02-27T13:23:19Z"
+        Version="2.0">
+        <saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">
+            https://iam.cs-dev.nphies.sa:443/oam/fed</saml:Issuer>
+        <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:SignedInfo>
+                <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+                <ds:Reference URI="#pfx29161857-26c6-1028-09e7-a3d5f79d4047">
+                    <ds:Transforms>
+                        <ds:Transform
+                            Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                        <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                    </ds:Transforms>
+                    <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                    <ds:DigestValue>VWLrDXxDE9wodhHgblt9ASKnwA4=</ds:DigestValue>
+                </ds:Reference>
+            </ds:SignedInfo>
+            <ds:SignatureValue>
+                dGaw3e7/WFVI5/HNcD21FT0XP3Rk3cifdnhpejjQ0Vz2nLTOtiW21Jc9Ew8gAzJh9L772xA7h1t4GEdwe6rJYXB2kOEVg+PGZzdtuxHtmitQdfBM/iOVGFGxBB4DzK6PgJAUqW/8d5jOgXvKFEHuvpCIA5UTBLVQc7FfV7XQZ9AYSlhI1Rza/aFaGrjvI9297YmbcLD6AegInS+HPVJ8zA8+DwRFwoWU09hvfmh6y69rL026jVF+fAbkSaqGm3k/3vZKyjwltnwckfPOnHWQSfhVFVv4Rbkmmz+k8CSVEPsM6praJBK9wSU90Njg/vAOF043BbG4GSpi9RqAbq7OBQ==</ds:SignatureValue>
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIIDDzCCAfegAwIBAgIUJLSvmcjlBwczhHNo1A8Jzpf9wQkwDQYJKoZIhvcNAQELBQAwFzEVMBMGA1UEAwwMSE5IX0doZXJuYXRhMB4XDTI2MDIyNDA4MTYwMloXDTI3MDIyNDA4MTYwMlowFzEVMBMGA1UEAwwMSE5IX0doZXJuYXRhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0D0ios4OXQCWPSDVHO/5CWj01me5xqinT/g4CxlOBGpXQMy/Q+nqBm8t5GZcSXSTtce/f9hJKyd2tTpS6Yrf7ukbzBFR4f0zvshrXKkCQf6++HNIKDe9gqM52dZhjzoH6sB0WDnx1LTSI9uLdTNTUx+mR98/dGqmewTrs9mnqV2cktpkakFxdZMQXDzDVy5LKIV64saeFo7CvQ4jWgGhumkk2yXo+DwJPs5d7rh0ddxmF5jmQCDRIzZeoNDjgu2IoR/8esQTmB1JS1YSew//zxrVTNrYVwC81eOC5vMs5kMLCt8VRR2P/FaJmUgG5Jd0vppsTli4J7tutnTzLoaeJQIDAQABo1MwUTAdBgNVHQ4EFgQUv0f4AoVlIUWvAt0b8RX2eIB2V/YwHwYDVR0jBBgwFoAUv0f4AoVlIUWvAt0b8RX2eIB2V/YwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAg4Exbvanz9d6KBJpeup6ZLtyvwgS0rv32P3AcT3ZWDfPlst601gJDFS3yuxNaHjFuIiVZwBGx/FeAco5nNeZITsCo3xGKJYC+CvR5HuS9eoiVwXTYcnSCM/U0VI9Ov4uKHgKNAC92Q9oKHigb+uu5curh/E942s+LhluVmqpAJpRnAEJahp482UMCRAJ0wjN9MIkHIXuwhz3iszHnIgoO/uiN7cTTJFFlaIOieaxD0k2VZQ7+PW14uAPGirP58L1SU7e/a9Yim/aoiu/dlG1H2TsWqGawOYWHJzyPHlQbmfMFIVcz+MBLfBjrWE68T9Ne3Mt0KVIsQlPTRs4Sq1Esg==</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </ds:Signature>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+                <Reference URI="#id-ae28466a-5dec-4947-be83-6a3af4f5d2e8">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                        <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                    <DigestValue>lNSjyUV8z8ewYZSC1rNU6doAzz8=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>
+                fKSb80gUyKW9Gor+rbXYu/MpGWFgOXmp3vF60W8TU1s1PMvKV3cWd8sfWkkGgOuw5UbFTjX8WtQn09Nfh/bo39uG1aQZoKbQvG6laFlF2fI51FXi9FXNdwgIWe59iZsZOLUTgFkDtlZjBr/On468BvXghJZiVFGwnDcqJSH1J2rQawaTJN+6qB8RXMDxrqZ66D6kO84O57ehA5iV/27NozMDTdKpxBoo67p0cI+ib140Wp8+/VHfIFyu4tLRqGeQDfSQuJ0DB2fySF5uS0dd6bwbzywBI2VH1kWJRlfxsmT5VxJoRQexVNyJd64RR7PP21VYRHaHp0AnSyVBETwGfQ==</SignatureValue>
+            <KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+                        MIIDDzCCAfegAwIBAgIUJLSvmcjlBwczhHNo1A8Jzpf9wQkwDQYJKoZIhvcNAQELBQAwFzEVMBMGA1UEAwwMSE5IX0doZXJuYXRhMB4XDTI2MDIyNDA4MTYwMloXDTI3MDIyNDA4MTYwMlowFzEVMBMGA1UEAwwMSE5IX0doZXJuYXRhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0D0ios4OXQCWPSDVHO/5CWj01me5xqinT/g4CxlOBGpXQMy/Q+nqBm8t5GZcSXSTtce/f9hJKyd2tTpS6Yrf7ukbzBFR4f0zvshrXKkCQf6++HNIKDe9gqM52dZhjzoH6sB0WDnx1LTSI9uLdTNTUx+mR98/dGqmewTrs9mnqV2cktpkakFxdZMQXDzDVy5LKIV64saeFo7CvQ4jWgGhumkk2yXo+DwJPs5d7rh0ddxmF5jmQCDRIzZeoNDjgu2IoR/8esQTmB1JS1YSew//zxrVTNrYVwC81eOC5vMs5kMLCt8VRR2P/FaJmUgG5Jd0vppsTli4J7tutnTzLoaeJQIDAQABo1MwUTAdBgNVHQ4EFgQUv0f4AoVlIUWvAt0b8RX2eIB2V/YwHwYDVR0jBBgwFoAUv0f4AoVlIUWvAt0b8RX2eIB2V/YwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAg4Exbvanz9d6KBJpeup6ZLtyvwgS0rv32P3AcT3ZWDfPlst601gJDFS3yuxNaHjFuIiVZwBGx/FeAco5nNeZITsCo3xGKJYC+CvR5HuS9eoiVwXTYcnSCM/U0VI9Ov4uKHgKNAC92Q9oKHigb+uu5curh/E942s+LhluVmqpAJpRnAEJahp482UMCRAJ0wjN9MIkHIXuwhz3iszHnIgoO/uiN7cTTJFFlaIOieaxD0k2VZQ7+PW14uAPGirP58L1SU7e/a9Yim/aoiu/dlG1H2TsWqGawOYWHJzyPHlQbmfMFIVcz+MBLfBjrWE68T9Ne3Mt0KVIsQlPTRs4Sq1Esg==</ds:X509Certificate>
+                </ds:X509Data>
+            </KeyInfo>
+        </Signature>
+        <saml:Subject>
+            <!-- Practitioner ID (Provider ID) from staffId parameter -->
+            <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">1599999971</saml:NameID>
+            <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <saml:SubjectConfirmationData NotOnOrAfter="2026-02-27T13:28:19Z"
+                    Recipient="https://iam.cs-ona.nphies.sa/nphies-sso/saml" />
+            </saml:SubjectConfirmation>
+        </saml:Subject>
+        <saml:Conditions NotBefore="2026-02-27T13:23:19Z" NotOnOrAfter="2026-02-27T13:28:19Z">
+            <saml:AudienceRestriction>
+                <!-- Audience from environment selection -->
+                <saml:Audience>https://iam.cs-ona.nphies.sa/oam/fed</saml:Audience>
+            </saml:AudienceRestriction>
+        </saml:Conditions>
+        <saml:AuthnStatement AuthnInstant="2026-02-27T13:23:19Z"
+            SessionIndex="id-870884ee-793f-45d5-b07a-3a01d68645c2"
+            SessionNotOnOrAfter="2026-02-27T21:23:19Z">
+            <saml:AuthnContext>
+                <saml:AuthnContextClassRef>
+                    urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml:AuthnContextClassRef>
+            </saml:AuthnContext>
+        </saml:AuthnStatement>
+        <saml:AttributeStatement>
+            <!-- Organization ID from key resolver -->
+            <saml:Attribute Name="Organization-Id"
+                NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+                <saml:AttributeValue xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xsi:type="xsd:string">10000300236625</saml:AttributeValue>
+            </saml:Attribute>
+            <!-- Patient Health ID from patientId parameter -->
+            <saml:Attribute Name="HealthId"
+                NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+                <saml:AttributeValue xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xsi:type="xsd:string">1599999951</saml:AttributeValue>
+            </saml:Attribute>
+        </saml:AttributeStatement>
+    </saml:Assertion>
+</samlp:Response>

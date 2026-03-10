@@ -1,0 +1,29 @@
+<div class="p-4 rounded bg-blue-50">
+    <!-- avatar -->
+    <div class="flex justify-between items-center">
+        <div class="flex gap-4 items-center">
+            <img class="h-12 rounded-full" [src]="comment?.commentCreator?.photo" alt="">
+            <p class="font-bold">{{comment?.commentCreator?.name}}</p>
+            <p class="text-gray-500">{{comment?.createdAt}}</p>
+        </div>
+
+        <!-- actions (delete) -->
+
+<li>
+                    <span 
+                        (click)="deleteComment()"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded">Delete <i class="fa fa-trash"></i></span>
+                </li>
+      
+
+    </div>
+
+    <!-- content -->
+    <p class="text-gray-500">{{comment?.content}}</p>
+</div>
+
+<!-- https://route-posts.routemisr.com/posts/69a9edd6056bdb7627ae2d38/comments/69a7595b056bdb762794493e -->
+ <!-- https://route-posts.routemisr.com/posts/69a9edd6056bdb7627ae2d38/comments/69a9ee2e056bdb7627ae2f8f
+  https://route-posts.routemisr.com/posts/69a9edd6056bdb7627ae2d38/comments/69a9ee29056bdb7627ae2f75
+
+ -->

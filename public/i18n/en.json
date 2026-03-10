@@ -1,0 +1,51 @@
+{
+  "COMMON": {
+    "SAVE": "Save",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "CREATE_ACCOUNT": "Create New Account",
+    "ALREADY_HAVE_ACCOUNT": "Already have an account",
+    "AR" : "Arabic" ,
+    "EN" : "English"
+  },
+
+  "ALERT_VALIDATION": {
+    "REQUIRED": "This field is required",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_INVALID": "Email is not valid",
+    "PASSWORD_REQUIRED": "Password is required",
+    "USERNAME_REQUIRED": "Username is required",
+    "NAME_REQUIRED": "Name is required",
+    "USERNAME_PATTERN": "Username must contain only lowercase letters, numbers or underscores (3–30 characters)",
+    "NAME_MIN_LENGTH": "Name should be at least 5 characters",
+    "GENDER_REQUIRED": "Gender is required",
+    "BIRTHDATE_REQUIRED": "Birth date is required",
+    "REPASSWORD_REQUIRED": "Confirm password is required",
+    "PASSWORD_MISMATCH": "Passwords do not match",
+    "PASSWORD_PATTERN": "Password must contain uppercase, lowercase, number, special character and be at least 8 characters"
+  },
+
+  "FORMS": {
+    "LABELS": {
+      "FULL_NAME": "Full Name",
+      "USERNAME": "Username",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "REPASSWORD": "Confirm Password",
+      "GENDER": "Gender",
+      "BIRTHDATE": "Birth Date"
+    },
+    "OPTIONS": {
+      "MALE": "Male",
+      "FEMALE": "Female"
+    }
+  },
+
+  "LOGIN_PAGE": {
+    "LOGIN_TITLE": "Login Page"
+  },
+
+  "REGISTER_PAGE": {
+    "REGISTER_TITLE": "Register Form"
+  }
+}

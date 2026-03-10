@@ -1,0 +1,78 @@
+<form (ngSubmit)="createPost()" [formGroup]="createPostForm" class="bg-white rounded p-2">
+    <div class="flex gap-2 items-center mb-4">
+        <img src="/avatar.png" class="h-12" alt="">
+        <div class="">
+            <p class="font-bold">omar waleed</p>
+
+            <div class="max-w-sm">
+                <div class="flex">
+                    <span id="" type="button"
+                        class="inline-flex items-center shrink-0 z-10 text-body bg-neutral-secondary-medium box-border border border-default-medium   font-medium leading-5 rounded-s-base text-sm px-4 py-2.5 ">
+
+                        <i class="fa fa-earth"></i>
+                    </span>
+
+                    <label for="states" class="sr-only">Choose a state</label>
+                    <select formControlName="privacy" id="states"
+                        class="block !outline-none !shadow-none !border-0 w-full px-3 py-2.5 bg-neutral-secondary-medium  text-heading text-sm rounded-e-base  shadow-xs placeholder:text-body">
+
+                        <option value="public">Public</option>
+                        <option value="followers">Followers</option>
+                        <option value="only_me">onlyMe</option>
+
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <textarea formControlName="body" id="message" rows="4"
+        class="mb-4 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
+        placeholder="Write your thoughts here..."></textarea>
+
+    @if(imgSrc) {
+    <div class="relative mb-4">
+        <img [src]="imgSrc" class="w-full max-h-96 object-cover" alt="">
+        <div class="size-10 bg-gray-700 flex items-center justify-center  absolute top-5 end-5 rounded-full  cursor-pointer hover:bg-gray-500 transition-all duration-300">
+            <i (click)="removeImg()" class="fa fa-times  text-white  "></i>
+
+        </div>
+    </div>
+    }
+
+
+    <hr>
+
+
+    <div class="flex justify-between py-2 items-center">
+        <div class="space-x-2 flex ">
+            <label for="uploadPostImg" class="secondary-btn ">
+                <i class="fa fa-picture-in-picture"></i>
+                <span>Photo / Video</span>
+
+                <input   (change)=" handleUploadPostImgChange($event)" id="uploadPostImg" type="file" hidden>
+            </label>
+            <div class="relative">
+                <button type="button" (click)="showPicker = !showPicker" class="secondary-btn ">
+                <i class="fa fa-smile"></i>
+                <span>Feeling/activity</span>
+
+                
+            </button>
+            @if( showPicker  ) {
+                <emoji-mart (emojiSelect)="handleEmojiSelected($event)"  [darkMode]="false" [style]="{ position: 'absolute', top: '-20px', left: '100px' }"></emoji-mart>
+
+            }
+            </div>
+        </div>
+
+        <button type="submit" class="main-btn flex gap-3 items-center">
+            <span class="">Post</span>
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+
+</form>
