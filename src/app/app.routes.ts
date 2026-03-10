@@ -4,6 +4,7 @@ import { LayoutWithNavbarComponents } from "./core/layouts/layout-with-navbar/la
 import { authGuard } from "./core/auth/guards/auth-guard";
 
 export const routes : Routes = [
+    {path : "" , redirectTo : "auth/login" , pathMatch : "full"},
     {
         path : "auth" ,
         component : EmptyLayoutComponents,
