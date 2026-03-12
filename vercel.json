@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "builds": [
+  "name": "social-app",
+  "rewrites": [
     {
-      "src": "api/index.js",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "dist/social-app/**"
     }
-  ],
-  "outputDirectory": "dist/social-app/browser"
+  }
 }
